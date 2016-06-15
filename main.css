@@ -1,0 +1,124 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+        -webkit-print-color-adjust: exact;
+    }
+    #container * {
+        visibility: visible;
+    }
+    #container {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+@page {
+    size:auto;
+    margin-bottom: 5mm;
+    margin-top: 5mm;
+}
+body {
+    background-color: white;
+    font-family: Calibri, sans-serif;
+}
+@media not print {
+    body {
+        background-color: lightgray;
+    }
+}
+#input {
+    width: 8in;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5in;
+    background-color: white;
+    padding: 0.5in;
+    box-shadow: 8px 8px 8px gray;
+    text-align: center;
+}
+#input input {
+    text-align: center;
+    font-size: 140%;
+}
+
+#container {
+    width: 8in;
+    height: 10.5in;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 0.5in;
+    box-shadow: 8px 8px 8px gray;
+}
+
+.header {
+    width: 100%;
+}
+.header tr td {
+    vertical-align: top;
+}
+.header tr td:not(:first-child) {
+    float: right;
+    text-align: right;
+}
+.header table {
+    float: right;
+    text-align: left;
+}
+.header table td {
+    padding-bottom: 0.125in;
+}
+.header span {
+    font-size: 110%;
+}
+
+.data {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data thead, .data td {
+    border: 1px solid black;
+    height: 0.3in;
+}
+.data thead {
+    background-color: lightgray;
+    text-align: center;
+    vertical-align: center;
+}
+.data td {
+    width: 14.2857142857%;
+}
+.data td:first-child {
+    background-color: lightgray;
+    padding-left: 8px;
+}
+.data td:nth-child(2) {
+    text-align: center;
+    vertical-align: center;
+}
+
+.fields {
+    width: 103%;
+}
+.fields td {
+    height: .5in;
+}
+.signatures {
+    margin-top: -76px;
+}
+.signatures td {
+    height: .5in;
+    padding-right: .5in;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.overtimeRow > td{
+    padding-top: 15px;
+}

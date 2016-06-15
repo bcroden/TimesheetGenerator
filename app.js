@@ -12,10 +12,25 @@ var weekday = [
 
 angular
     .module('app', [])
-    .controller('pageController', [function() {
+    .controller('pageController', ['$scope', function($scope) {
         var vm = this;
 
-        vm.startInput = dateFormatter(new Date());
+        vm.startInput = moment().format('MM/DD/YYYY');
+        var dialog = new mdDateTimePicker.default({
+            type: 'date',
+            future: moment().add(20, 'years')
+        });
+
+        dialog.trigger = document.getElementById('input-date');
+        document.getElementById('input-date').addEventListener('onOk', function() {
+            $scope.$apply(function() {
+                vm.startInput = dialog.time.format('MM/DD/YYYY');
+            });
+        });
+
+        vm.onDateClick = function() {
+            dialog.toggle();
+        }
 
         vm.getStartDay = function() {
             return new Date(vm.startInput)

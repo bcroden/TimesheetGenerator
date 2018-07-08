@@ -1,0 +1,129 @@
+body {
+    background-color: #eee;
+    font-family: Calibri, sans-serif;
+}
+#input {
+    width: 8in;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5in;
+    background-color: white;
+    padding: 0.5in;
+    box-shadow: 0px 1px 2px gray;
+    text-align: center;
+}
+#input input {
+    text-align: center;
+    font-size: 140%;
+}
+
+#container {
+    width: 8in;
+    height: 10.5in;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 0.5in;
+    box-shadow: 0px 1px 2px gray;
+}
+
+.header {
+    width: 100%;
+}
+.header tr td {
+    vertical-align: top;
+}
+.header tr td:not(:first-child) {
+    float: right;
+    text-align: right;
+}
+.header table {
+    float: right;
+    text-align: left;
+}
+.header table td {
+    padding-bottom: 0.125in;
+}
+.header span {
+    font-size: 110%;
+}
+
+.data {
+    width: 100%;
+    border-collapse: collapse;
+}
+.data thead,
+.data th,
+.data td {
+    border: 1px solid black;
+    height: 0.3in;
+}
+.data thead {
+    background-color: lightgray;
+    text-align: center;
+    vertical-align: center;
+}
+.data th,
+.data td {
+    width: 14.2857142857%;
+}
+.data th:first-child,
+.data td:first-child {
+    background-color: lightgray;
+    padding-left: 8px;
+}
+.data th:nth-child(2),
+.data td:nth-child(2) {
+    text-align: center;
+    vertical-align: center;
+}
+
+.fields {
+    width: 103%;
+}
+.fields td {
+    height: 0.5in;
+}
+.signatures {
+    margin-top: -76px;
+}
+.signatures td {
+    height: 0.5in;
+    padding-right: 0.5in;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.overtimeRow > td {
+    padding-top: 15px;
+}
+@media print {
+    @page {
+        size: auto;
+        margin-bottom: 5mm;
+        margin-top: 5mm;
+        margin: 0;
+    }
+    body {
+        background-color: white;
+    }
+    body * {
+        visibility: hidden;
+        -webkit-print-color-adjust: exact;
+    }
+    #container * {
+        visibility: visible;
+    }
+    #container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-sizing: border-box;
+        padding: 0;
+        transform: scale(0.9);
+    }
+}

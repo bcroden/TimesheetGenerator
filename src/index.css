@@ -2,20 +2,6 @@ body {
     background-color: #eee;
     font-family: Calibri, sans-serif;
 }
-#input {
-    width: 8in;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0.5in;
-    background-color: white;
-    padding: 0.5in;
-    box-shadow: 0px 1px 2px gray;
-    text-align: center;
-}
-#input input {
-    text-align: center;
-    font-size: 140%;
-}
 
 #container {
     width: 8in;
@@ -24,6 +10,7 @@ body {
     margin-right: auto;
     background-color: white;
     padding: 0.5in;
+    margin-top: 0.5in;
     box-shadow: 0px 1px 2px gray;
 }
 
@@ -99,6 +86,19 @@ body {
 .overtimeRow > td {
     padding-top: 15px;
 }
+
+.clickable-field {
+    cursor: pointer;
+    background-color: lightgray;
+}
+
+.datepicker {
+    visibility: hidden;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+}
+
 @media print {
     @page {
         size: auto;
@@ -125,5 +125,9 @@ body {
         box-sizing: border-box;
         padding: 0;
         transform: scale(0.9);
+        margin: 0;
+    }
+    .clickable-field {
+        background-color: transparent;
     }
 }

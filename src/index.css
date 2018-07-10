@@ -116,8 +116,8 @@ body {
     cursor: pointer;
 
     position: absolute;
-    right: -1.25in;
-    top: 1.05in;
+    right: -2in;
+    top: 1in;
     background-color: white;
     padding: 1rem;
     box-shadow: 0px 1px 2px gray;
@@ -125,12 +125,48 @@ body {
 }
 .two-weeks-button .row {
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
     padding-top: 0.25rem;
+    align-items: center;
+    justify-content: center;
 }
 
-.two-weeks-button button {
+.two-weeks-button .row:first-child button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid white;
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    outline: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.two-weeks-label {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.print-button svg {
+    margin-left: 0.5rem;
+}
+
+.two-weeks-button svg {
+    fill: currentColor;
+}
+.two-weeks-button .row:first-child button:hover {
+    background-color: #eee;
+    border-color: #eee;
+}
+.print-button {
     -moz-appearance: none;
     -webkit-appearance: none;
 
@@ -139,23 +175,18 @@ body {
     border: none;
     cursor: pointer;
     background-color: white;
-    border-radius: 100%;
-    border: 1px solid white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
     transition-property: background-color, border-color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
     outline: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
-.two-weeks-button button svg {
-    fill: currentColor;
-}
-.two-weeks-button button:hover {
+.print-button:hover {
     background-color: #eee;
-    border-color: #eee;
 }
 
 @media print {

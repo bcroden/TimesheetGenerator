@@ -1,14 +1,22 @@
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #eee;
     font-family: Calibri, sans-serif;
 }
 
-#container {
-    width: 8in;
-    height: 10.5in;
+.wrapper {
+    position: relative;
     margin-left: auto;
     margin-right: auto;
+    width: 8.5in;
+}
+
+#container {
     background-color: white;
+    width: 8.5in;
+    height: 11in;
     padding: 0.5in;
     margin-top: 0.5in;
     box-shadow: 0px 1px 2px gray;
@@ -98,6 +106,57 @@ body {
     top: -100%;
     left: -100%;
 }
+.two-weeks-button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    right: -1.25in;
+    top: 1.05in;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0px 1px 2px gray;
+    text-align: center;
+}
+.two-weeks-button .row {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding-top: 0.25rem;
+}
+
+.two-weeks-button button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 100%;
+    border: 1px solid white;
+    transition-property: background-color, border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-weeks-button button svg {
+    fill: currentColor;
+}
+.two-weeks-button button:hover {
+    background-color: #eee;
+    border-color: #eee;
+}
 
 @media print {
     @page {
@@ -107,10 +166,14 @@ body {
         margin: 0;
     }
     * {
+        box-sizing: content-box;
         -webkit-print-color-adjust: exact;
     }
     body {
         background-color: white;
+    }
+    .wrapper {
+        margin: 0;
     }
     #container {
         margin: 0;
@@ -118,5 +181,8 @@ body {
     }
     .clickable-field {
         background-color: transparent;
+    }
+    .two-weeks-button {
+        display: none;
     }
 }

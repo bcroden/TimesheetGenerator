@@ -17,13 +17,36 @@ const formatDate = new Intl.DateTimeFormat(undefined, {
 });
 
 class App extends React.Component {
-    state = { currentDate: new Date() };
+    state = {
+        currentDate: new Date(),
+        isDefaultDate: true
+    };
 
     datepicker = React.createRef();
 
     handleDateChange = (e, date) => {
         this.setState({
-            currentDate: new Date(date.getTime() + halfDayInMs)
+            currentDate: new Date(date.getTime() + halfDayInMs),
+            isDefaultDate: false
+        });
+    };
+
+    subTwoWeeks = () => {
+        this.setState(state => {
+            return {
+                currentDate: new Date(
+                    state.currentDate.getTime() - 14 * oneDayInMs
+                )
+            };
+        });
+    };
+    addTwoWeeks = () => {
+        this.setState(state => {
+            return {
+                currentDate: new Date(
+                    state.currentDate.getTime() + 14 * oneDayInMs
+                )
+            };
         });
     };
 
@@ -34,7 +57,7 @@ class App extends React.Component {
     };
 
     render() {
-        const { currentDate } = this.state;
+        const { currentDate, isDefaultDate } = this.state;
 
         return (
             <React.Fragment>
@@ -51,10 +74,42 @@ class App extends React.Component {
                     value={currentDate}
                 />
 
-                <Timesheet
-                    currentDate={currentDate}
-                    onDayClick={this.handleDayClick}
-                />
+                <div className="wrapper">
+                    {!isDefaultDate && (
+                        <div className="two-weeks-button">
+                            <div>2 weeks</div>
+                            <div className="row">
+                                <button onClick={this.subTwoWeeks}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M19 13H5v-2h14v2z" />
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                    </svg>
+                                </button>
+                                <button onClick={this.addTwoWeeks}>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+                                        <path d="M0 0h24v24H0z" fill="none" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    )}
+
+                    <Timesheet
+                        currentDate={currentDate}
+                        onDayClick={this.handleDayClick}
+                    />
+                </div>
             </React.Fragment>
         );
     }
